@@ -2,6 +2,18 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: #f4f4f4;
+  width: 50%;
+  min-width: 400px;
+  margin: auto;
+  background-color: lightgray;
+}
+.instrucciones{
+  font-size: xx-large;
+  color: black;
+}
+.botones{
+  display: flex;
+  justify-content: space-around;
 }
 .boton-jugada {
   background-color: #3498db;
@@ -9,8 +21,28 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 10px;
 }
 #resultados {
   font-size: 20px;
   margin: 20px 0;
+  background-color: beige;
+  padding: 20px;
+  border-radius: 20px;
+}
+#contadores{
+  display: flex;
+  justify-content: space-around;
+}
+#contadores p{
+  width: 50%;
+  height: 30px;
+  align-content: center;
+  border-radius: 10px;
+}
+#contador-usuario{
+  background-color: lightgreen;
+}
+#contador-ordenador{
+  background-color: lightcoral;
 }
