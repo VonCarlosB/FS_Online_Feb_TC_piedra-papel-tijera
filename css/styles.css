@@ -5,7 +5,6 @@ body {
   width: 50%;
   min-width: 400px;
   margin: auto;
-  background-color: lightgray;
 }
 .instrucciones{
   font-size: xx-large;
@@ -45,4 +44,12 @@ body {
 }
 #contador-ordenador{
   background-color: lightcoral;
+}
+#imgContainer{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+#imgContainer img{
+  width: 45%;
 }

@@ -1,9 +1,17 @@
+/* Logic variables */
 const result = document.getElementById('resultados')
 const userCounter = document.getElementById('contador-usuario')
 const computerCounter = document.getElementById('contador-ordenador')
 const options = []
 let playerPoints = 0
 let computerPoints = 0
+/* Image variables */
+const yourOption = document.getElementById('yourOption')
+const pcOption = document.getElementById('machineOption')
+const rock = 'img/rock.png'
+const paper = 'img/paper.png'
+const scissors = 'img/scissors.png'
+const rps = 'img/rock-paper-scissors.png'
 
 for (const element of document.querySelectorAll(".boton-jugada")) {
     let election = element.getAttribute('data-jugada')
@@ -15,8 +23,20 @@ for (const element of document.querySelectorAll(".boton-jugada")) {
 
 function jugada(election) {
     let ans = options[Math.floor(Math.random()*3)]
-    result.innerText = 'Has elegido '+election+' y la máquina ha elegido '+ans+'\n\n'
-    checkResults(ans, election)
+    result.innerText = ''
+    setImages(yourOption, 'default')
+    setImages(pcOption, 'default')
+    setTimeout(() => {
+        setImages(yourOption, election)
+    }, 500);
+    setTimeout(() => {
+        setImages(pcOption, ans)
+    }, 1000);
+    setTimeout(() => {
+        result.innerText = 'Has elegido '+election+' y la máquina ha elegido '+ans+'\n\n'
+        checkResults(ans, election)
+    }, 1500);
+    
 }
 
 function checkResults(ans, election) {
@@ -57,5 +77,17 @@ function reloadPage(dif) {
         if(window.confirm('Vaya... Has perdido, más suerte la próxima vez.\n¿Otra vez?')){
             location.reload()
         }
+    }
+}
+
+function setImages(element, content) {
+    if(content == 'piedra'){
+        element.setAttribute('src', rock)
+    }else if(content == 'papel'){
+        element.setAttribute('src', paper)
+    }else if(content == 'tijera'){
+        element.setAttribute('src', scissors)
+    }else{
+        element.setAttribute('src', rps)
     }
 }
